@@ -1,0 +1,27 @@
+﻿<Page x:Class="Bank.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Bank"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Login">
+
+    <Grid Background="#1C1C1C">
+
+        <Border Padding="10" BorderBrush="#303030" Background="#303030"  BorderThickness="1" Width="210" Height="260" CornerRadius="8">
+            <Grid>
+                <Button Content="Наведите курсор на меня">
+                    <Button.Cursor>
+                        <Cursor>Hand</Cursor>
+                    </Button.Cursor>
+                </Button>
+                <Button Grid.Column="0" Content="Войти"  VerticalAlignment="Top" HorizontalAlignment="Left" />
+                <Button Content="Зарегистрироваться"   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="58,0,0,0" Click="Button_Click"   />
+
+
+            </Grid>
+        </Border>
+    </Grid>
+</Page>
