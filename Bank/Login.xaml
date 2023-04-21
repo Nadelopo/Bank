@@ -9,19 +9,21 @@
       Title="Login">
 
     <Grid Background="#1C1C1C">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="271*"/>
+            <ColumnDefinition Width="258*"/>
+            <ColumnDefinition Width="271*"/>
+        </Grid.ColumnDefinitions>
 
-        <Border Padding="10" BorderBrush="#303030" Background="#303030"  BorderThickness="1" Width="210" Height="260" CornerRadius="8">
+        <Border Padding="10" BorderBrush="#303030" Background="#303030"  BorderThickness="1" CornerRadius="8" Grid.ColumnSpan="3" Margin="260,95,260,95">
             <Grid>
-                <Button Content="Наведите курсор на меня">
-                    <Button.Cursor>
-                        <Cursor>Hand</Cursor>
-                    </Button.Cursor>
-                </Button>
                 <Button Grid.Column="0" Content="Войти"  VerticalAlignment="Top" HorizontalAlignment="Left" />
-                <Button Content="Зарегистрироваться"   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="58,0,0,0" Click="Button_Click"   />
-
-
+                <Button Content="Зарегистрироваться"   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="76,0,0,0" />
             </Grid>
         </Border>
+        <TextBox  Margin="0,170,0,0" Text="номер телефона без 7" Grid.Column="1" VerticalAlignment="Top" Width="258" Height="30" PreviewKeyDown="onFocus" TextChanged="onChange" MaxLength="10" />
+        <PasswordBox Margin="0,225,0,0" Grid.Column="1" VerticalAlignment="Top" Width="258" Height="30"   Background="#1c1c1c"  />
+        <Border BorderBrush="#1c1c1c" Background="#1c1c1c" BorderThickness="1" Margin="19,290,139,126"  Height="34" Width="100" CornerRadius="10" Grid.Column="1"/>
+
     </Grid>
 </Page>

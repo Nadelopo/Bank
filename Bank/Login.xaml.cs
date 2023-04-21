@@ -20,14 +20,29 @@ namespace Bank
     /// </summary>
     public partial class Login : Page
     {
+        string loginText = "номер телефона без 7";
         public Login()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void onFocus(object sender, RoutedEventArgs e)
         {
+            TextBox textBox = (TextBox)sender;
+            string text = textBox.Text;
 
+            if (text == loginText)
+            {
+                textBox.Text = "";
+            }
+
+        }
+
+        private void onChange(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            string text = textBox.Text;
+      
         }
     }
 }

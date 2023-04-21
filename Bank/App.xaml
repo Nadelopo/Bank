@@ -13,11 +13,11 @@
             <Setter Property="Foreground" Value="#FFF" />
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Height" Value="20" />
             <Setter Property="Padding" Value="6,0,6,2" />
-            <Setter Property="BorderThickness" Value="1.5" />
+            <Setter Property="BorderThickness" Value="2" />
             <Setter Property="BorderBrush" Value="#1c1c1c" />
             <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="FontSize" Value="18" />
               
             <Setter Property="Template">
                 <Setter.Value>
@@ -30,9 +30,59 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#303030"/>
+                    <!--<Setter Property="Background" Value="#303030"/>-->
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation 
+                                To="#303030"
+                                Duration="0:0:0.2"
+                                Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation 
+                                To="#1C1C1C"
+                                Duration="0:0:0.2"
+                                Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#1C1C1C" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Foreground" Value="#FFF" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="TextWrapping" Value="NoWrap" />
+            <Setter Property="Padding" Value="10,3" />
+            <Setter Property="BorderBrush" Value="#1c1c1c" />
+            <Setter Property="BorderThickness"  Value="0"/>
+
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </Style.Resources>
+        </Style>
+        
+         <Style TargetType="PasswordBox">
+            <Setter Property="Background" Value="#1C1C1C" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Foreground" Value="#FFF" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Padding" Value="10,3" />
+            <Setter Property="BorderBrush" Value="#1c1c1c" />
+            <Setter Property="BorderThickness"  Value="0"/>
+        </Style>
+        
+        
     </Application.Resources>
 </Application>
