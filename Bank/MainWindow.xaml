@@ -5,9 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bank"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-        Name="MainFrame"
+        Title="MainWindow" Height="900" MinHeight="750" MinWidth="550" Width="1600"
         >
-    <Grid>
-    </Grid>
+    <Frame Name="MainFrame" NavigationUIVisibility="Hidden"/>
 </Window>
+

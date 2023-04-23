@@ -16,17 +16,14 @@ using System.Windows.Shapes;
 namespace Bank
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Main.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Main : Page
     {
-        public MainWindow()
+        public Main()
         {
-            App.user.createUser(0, 53234, 9033384206, "1231231");
-            App.users.Add(App.user);
             InitializeComponent();
-            MainFrame.Content = new Main();
-           
+            Total.Text = App.user.total.ToString() + " руб";
         }
     }
 }

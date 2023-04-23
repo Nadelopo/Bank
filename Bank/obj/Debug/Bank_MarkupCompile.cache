@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\visual_stuidio_app\c#\Bank\Bank\obj\Debug\
+D:\visual_stuidio_app\c#\Bank-main\Bank\obj\Debug\
 Bank
 none
 false
 DEBUG;TRACE
-D:\visual_stuidio_app\c#\Bank\Bank\App.xaml
-2736615074
+D:\visual_stuidio_app\c#\Bank-main\Bank\App.xaml
+35736223
 
-6633769292
+7-1369708233
 13-1310406943
-Login.xaml;MainWindow.xaml;
+Login.xaml;Main.xaml;MainWindow.xaml;
 
 False
 
