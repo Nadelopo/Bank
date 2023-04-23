@@ -25,5 +25,48 @@ namespace Bank
             InitializeComponent();
             Total.Text = App.user.total.ToString() + " руб";
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int sum;
+            if (int.TryParse(depositeSum.Text, out sum))
+            {
+                if (sum > App.user.total)
+                {
+                    depositeSum.Text = App.user.total.ToString();
+                }
+            }
+        }
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!char.IsDigit(e.Text, 0))
+            {
+                e.Handled = true;
+            }
+
+
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void periodChoice(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            string[] arguments = button.Tag.ToString().Split(',');
+            string period = arguments[0];
+            string percentages = arguments[1];
+            int deposite;
+            if (int.TryParse(depositeSum.Text, out deposite))
+            {
+                int finailDepositeSum = (deposite + (deposite * int.Parse(percentages) / 100 * int.Parse(period) / 12));
+                finalSum.Text = finailDepositeSum.ToString() + " руб";
+            }
+
+
+        }
     }
 }

@@ -14,16 +14,77 @@
             <Grid>
                 <Border Background="#1c1c1c" Height="100" CornerRadius="10" Margin="-1,11,-1,567" >
                     <Grid>
-                        <TextBox Text="Счет " VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="40" />
-                        <TextBox Name="Total" Text="" TextAlignment="Right" Margin="162,0,0,0" FontSize="40" Width="308" />
+                        <TextBlock Text="Счет " VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="#fff" FontSize="40" />
+                        <TextBlock Name="Total" Text="" TextAlignment="Right" VerticalAlignment="Center" Margin="162,0,0,0" Foreground="#fff"  FontSize="40" Width="308" />
                     </Grid>
                 </Border>
-                <Border  Background="#1c1c1c" Height="100" CornerRadius="10" Margin="1,151,-1,427">
-                    <Grid>
-                        <TextBox Text="Вклады " HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="30" />
-                        <Button Content="открыть вклад" BorderBrush="#303030" FontSize="30" HorizontalAlignment="Left" Margin="254,0,0,0" />
-                    </Grid>
+                <Border  Background="#1c1c1c" CornerRadius="10" Margin="1,151,-1,452">
+
+                    <TextBlock Text="Вклады " HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#fff"  Margin="10,0,0,0" FontSize="30" />
+
                 </Border>
+
+                <Border Background="#1c1c1c" Margin="1,289,0,344">
+                    <TextBlock Foreground="#fff" Text="сумма вклада"  FontSize="30"  Background="#1c1c1c" Margin="10,0,10,0"   />
+                </Border>
+                <TextBox Name="depositeSum" Height="56" Width="478" Margin="0,339,0,0"  VerticalContentAlignment="Center"  TextChanged="TextBox_TextChanged" VerticalAlignment="Top" PreviewTextInput="TextBox_PreviewTextInput" Text="0" />
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button  Grid.Column="0" Margin="0,409,0,0" VerticalAlignment="Top" Tag="3,6" Click="periodChoice">
+                        <Button.ContentTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" Width="80">
+                                    <TextBlock Text="3 мес." TextAlignment="Center" />
+                                    <TextBlock Text="6%" TextAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </Button.ContentTemplate>
+                    </Button>
+                    <Button  Grid.Column="1" Margin="0,409,0,0" VerticalAlignment="Top" Tag="8,12"  Click="periodChoice" >
+                        <Button.ContentTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical"  Width="80">
+                                    <TextBlock Text="6 мес." TextAlignment="Center" />
+                                    <TextBlock Text="7%" TextAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </Button.ContentTemplate>
+                    </Button>
+                    <Button Grid.Column="2" Margin="0,409,0,0" VerticalAlignment="Top" Tag="9,8"  Click="periodChoice" >
+                        <Button.ContentTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical"  Width="80">
+                                    <TextBlock Text="9 мес." TextAlignment="Center" />
+                                    <TextBlock Text="8%" TextAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </Button.ContentTemplate>
+                    </Button>
+                    <Button  Grid.Column="3" Margin="0,409,0,0" VerticalAlignment="Top" Tag="12,9"  Click="periodChoice" >
+                        <Button.ContentTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical"  Width="80">
+                                    <TextBlock Text="12 мес." TextAlignment="Center" />
+                                    <TextBlock Text="9%" TextAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </Button.ContentTemplate>
+                    </Button>
+                </Grid>
+
+                <Border Background="#1c1c1c" Margin="-1,479,2,154">
+                    <TextBlock Name="finalSum" Text="0 руб" Foreground="#fff"  FontSize="30"  Background="#1c1c1c" Margin="10,0,10,0"   />
+                </Border>
+
+                <Button Content="открыть вклад" FontSize="20" Margin="0,540,0,0" VerticalAlignment="Top" Click="Button_Click" />
+
+
             </Grid>
         </Border>
     </Grid>
